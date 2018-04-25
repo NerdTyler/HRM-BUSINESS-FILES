@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<head>
+<title>HRM Billing Page</title>
+
+<script>
+function ShowGrass (){
+	document.getElementById('CutGrassA').style.display='block';}
+
+function ShowSpringCleanUp (){
+	document.getElementById('SpringCleanUpA').style.display='block';}
+
+function ShowFallCleanUp (){
+	document.getElementById('FallCleanUpA').style.display='block';}
+
+function ShowTrimBushes (){
+	document.getElementById('TrimBushesA').style.display='block';}
+
+function ShowSnowPlowing (){
+	document.getElementById('SnowPlowingA').style.display='block';}
+
+function ShowSalting (){
+	document.getElementById('SaltingA').style.display='block';}
+
+function ShowPowerWashing (){
+	document.getElementById('PowerWashingA').style.display='block';}
+
+function ShowCleaningOutGutters (){
+	document.getElementById('CleaningOutGuttersA').style.display='block';}
+
+function HideGrass (){
+	document.getElementById('CutGrassA').style.display='none';}
+
+function HideSpringCleanUp (){
+	document.getElementById('SpringCleanUpA').style.display='none';}
+
+function HideFallCleanUp (){
+	document.getElementById('FallCleanUpA').style.display='none';}
+
+function HideTrimBushes (){
+	document.getElementById('TrimBushesA').style.display='none';}
+
+function HideSnowPlowing (){
+	document.getElementById('SnowPlowingA').style.display='none';}
+
+function HideSalting (){
+	document.getElementById('SaltingA').style.display='none';}
+
+function HidePowerWashing (){
+	document.getElementById('PowerWashingA').style.display='none';}
+
+function HideCleaningOutGutters (){
+	document.getElementById('CleaningOutGuttersA').style.display='none';}
+
+function Client(){
+var person = document.getElementById("Name").value;
+switch(person){
+	case 'diane':
+		Grass = 20;
+		Leaves = 30;
+		SpringCleanUp = 0;
+		FallCleanUp = 0;
+		TrimBushes = 0;
+		SnowPlowing = 0;
+		Salting = 0;
+		PowerWashing = 0;
+		CleaningOutGutters = 0;
+		break;
+	case 'tyler':
+		Grass = 10;
+		Leaves = 300;
+		SpringCleanUp = 0;
+		FallCleanUp = 0;
+		TrimBushes = 0;
+		SnowPlowing = 0;
+		Salting = 0;
+		PowerWashing = 0;
+		CleaningOutGutters = 0;
+		break;
+		}
+}
+	
+		function information(){
+			
+			var Name = document.getElementById("InformationForm").elements.namedItem("Name").value;
+			var Address = document.getElementById("InformationForm").elements.namedItem("Address").value;
+			var PhoneNumber = document.getElementById("InformationForm").elements.namedItem("PhoneNumber").value;
+			var Job1 = document.getElementById("Job1").value;
+			var Job2 = document.getElementById("Job2").value;
+			var Job3 = document.getElementById("Job3").value;
+			
+
+			var confirmation = confirm("Is this information correct? \nIf correct, please click 'OK' \n \n" + Name + "\n" + Address + "\n" + PhoneNumber + "\n"+ Job1+ "\n" + Job2 + "\n"+ Job3);
+				if (confirmation == true){
+				document.write(b);}
+				else{
+				alert("Please change date to make it correct");
+				}
+			//			var queryString = "?NAME=" + Name + "&ADD=" + Address + "&PHONE=" + PhoneNumber + "&JOB1=" + Job1 + "&JOB2=" + Job2 + "&JOB3=" + Job3;
+	//			window.location.href = "bill.html" + queryString;
+		}
+			//PLACE CATEGORY THAT STATES 'SUPPLY LIST COST' (MAKE IT SO HE CAN FILL IT IN HIMSELF
+			
+			function Calculate(){
+	var CutG = getRadioVal( document.getElementById('CutGrass'), '1' );
+	var SpringCU = getRadioVal( document.getElementById('SpringCleanUp'), 'Q2' );
+	var FallCU = getRadioVal( document.getElementById('FallCleanUp'), '1' );
+	var TrimB = getRadioVal( document.getElementById('TrimBushes'), '1' );
+	var SnowP = getRadioVal( document.getElementById('SnowPlowing'), '1' );
+	var Salting = getRadioVal( document.getElementById('Salting'), '1' );
+	var PowerW = getRadioVal( document.getElementById('PowerWashing'), '1' );
+	var CleaningOG = getRadioVal( document.getElementById('CleaningOutGutters'), '1' );
+	
+	alert(PowerW);}	
+	function getRadioVal(form, name) {
+    var val;
+    // get list of radio buttons with specified name
+    var radios = form.elements[name];}
+	
+	</script>
+</head>
+<body>
+<h1>HRM Billing Page</h1>
+<img src="logo.png">
+<p>Please enter the following information</p>
+	<form id="InformationForm">
+		<b>Client:</b>
+		<select id="Name" onchange="Client();">
+			<option selected="selected">Pick one</option>
+			<option value="diane">Diane</option>
+			<option value="this will be used in an if statement to call values for multipliers">Test</option>
+			<option value="shop">Shop</option>
+			<option value="tyler">Tyler</option>
+			<option>Gentry</option>
+			<option>Billy</option>
+		</select>
+		<br>
+		<h3>Work Done</h3>
+		</form>
+		<form id="CutGrass">
+		<b>Cut Grass<br></b>
+			No<input type="radio" name="1" value="0" onchange="HideGrass();" checked><br>
+			Yes<input type="radio" name="1" value="1" onchange="ShowGrass();">
+		<div id="CutGrassA" style="display:none;">
+			Times: 
+				<select onchange="">
+					<option selected>Select Option</option>
+					<option value="1">1</option> 
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select>
+		</div>
+		<br><br>
+		</form>
+		
+		<form id="SpringCleanUp">
+		<b>Spring Clean-Up ($40 an hour)<br></b>
+			No<input type="radio" name="1" value="0" onchange="HideSpringCleanUp();"  checked><br>
+			Yes<input type="radio" name="1" value="1" onchange="ShowSpringCleanUp();">
+			<div id="SpringCleanUpA" style="display:none;">
+			Times: 
+				<select onchange="">
+					<option selected>Select Option</option>
+					<option value="1">1</option> 
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>				</select>
+			</div>
+			<br><br>
+			</form>
+			
+		<form id="FallCleanUp">
+		<b>Fall Clean-Up ($55 an hour)<br></b>
+			No<input type="radio" name="1" value="0" onchange="HideFallCleanUp();"  checked><br>
+			Yes<input type="radio" name="1" value="1" onchange="ShowFallCleanUp();">
+			<div id="FallCleanUpA" style="display:none;">
+			Times: 
+				<select onchange="">
+					<option selected>Select Option</option>
+					<option value="1">1</option> 
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select>
+			</div>
+			<br><br>
+		</form>
+		
+		<form id="TrimBushes">
+		<b>Trim Bushes($35 an hour)<Br></b>
+			No<input type="radio" name="1" value="0" onchange="HideTrimBushes();"  checked><br>
+			Yes<input type="radio" name="1" value="1" onchange="ShowTrimBushes();">
+			<div id="TrimBushesA" style="display:none;">
+			Times: 
+				<select onchange="">
+					<option selected>Select Option</option>
+					<option value="1">1</option> 
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select>
+			</div>	
+			<br><br>
+			</form>
+			
+		<form id="SnowPlowing">
+		<b>Snow Plowing<br></b>
+			No<input type="radio" name="1" value="0" onchange="HideSnowPlowing();"  checked><br>
+			Yes<input type="radio" name="1" value="1" onchange="ShowSnowPlowing();">
+			<div id="SnowPlowingA" style="display:none;">
+			Times: 
+				<select onchange="">
+					<option selected>Select Option</option>
+					<option value="1">1</option> 
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select>
+			</div>
+			<br><br>
+			</form>
+			
+		<form id="Salting">
+		<b>Salting<br></b>
+			No<input type="radio" name="1" value="0" onchange="HideSalting();"  checked><br>
+			Yes<input type="radio" name="1" value="1" onchange="ShowSalting();">
+			<div id="SaltingA" style="display:none;">
+			Times: 
+				<select onchange="">
+					<option selected>Select Option</option>
+					<option value="1">1</option> 
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select>
+			</div>
+			<br><br>
+			</form>
+			
+		<form id="PowerWashing">
+		<b>Power Washing<br></b>
+			No<input type="radio" name="1" value="0" onchange="HidePowerWashing();"  checked><br>
+			Yes<input type="radio" name="1" value="1" onchange="ShowPowerWashing();">
+			<div id="PowerWashingA" style="display:none;">
+			Times: 
+				<select onchange="">
+					<option selected>Select Option</option>
+					<option value="1">1</option> 
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select>
+			</div>
+			<br><br>
+			</form>
+			
+		<form id="CleaningOutGutters">
+		<b>Cleaning Out Gutters<br></b>
+			No<input type="radio" name="1" value="0" onchange="HideCleaningOutGutters();"  checked><br>
+			Yes<input type="radio" name="1" value="1" onchange="ShowCleaningOutGutters();">
+			<div id="CleaningOutGuttersA" style="display:none;">
+			Times: 
+				<select onchange="">
+					<option selected>Select Option</option>
+					<option value="1">1</option> 
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select>
+			</div>
+			</form>
+		<br><br>
+	
+		<button onclick="Calculate()">Click here to generate bill</button>
+
+
+<div style="display: none;">
+<div id="Bill">
+<img src="logo.png"><br>
+<script> document.write("<h3>HRM<br>3686 Lantern Lane<br>Fort Gratiot MI, 48059<br>1(810)531-8662</h3> <h3>Date: </h3><br><p>Billing<br><br><b>Name: </b>" + Name +"<br><b>Address: </b>" + Address + "<br><b>Phone #: </b>" + PhoneNumber + "<br></p><br>");
+</script>
+<table style="width:100%">
+  <tr>
+    <th>Job</th>
+    <th>Description</th> 
+    <th>Price</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td> 
+    <td></td>
+  </tr>
+</table>
+
+</div>
+</div>
+
+<script>
+var b = document.getElementById("Bill").innerHTML;
+
+</script>
+</body>
+</html>

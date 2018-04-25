@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<head>
+<title>HRM Billing Page</title>
+
+<script>
+		function information(){
+			var Name = document.getElementById("InformationForm").elements.namedItem("Name").value;
+			var Address = document.getElementById("InformationForm").elements.namedItem("Address").value;
+			var PhoneNumber = document.getElementById("InformationForm").elements.namedItem("PhoneNumber").value;
+			var Job1 = document.getElementById("Job1").value;
+			var Job2 = document.getElementById("Job2").value;
+			var Job3 = document.getElementById("Job3").value;
+			
+
+			var confirmation = confirm("Is this information correct? \nIf correct, please click 'OK' \n \n" + Name + "\n" + Address + "\n" + PhoneNumber + "\n"+ Job1+ "\n" + Job2 + "\n"+ Job3);
+				if (confirmation == true){
+				document.write(b);}
+				else{
+				alert("Please change date to make it correct");
+				}
+			//			var queryString = "?NAME=" + Name + "&ADD=" + Address + "&PHONE=" + PhoneNumber + "&JOB1=" + Job1 + "&JOB2=" + Job2 + "&JOB3=" + Job3;
+	//			window.location.href = "bill.html" + queryString;
+		}
+			//PLACE CATEGORY THAT STATES 'SUPPLY LIST COST' (MAKE IT SO HE CAN FILL IT IN HIMSELF
+	</script>
+</head>
+<body>
+<h1>HRM Billing Page</h1>
+<img src="logo.png">
+<p>Please enter the following information</p>
+	<form id="InformationForm">
+		<b>Name:</b>
+		<input type="text" id="Name"><br><br>
+		<b>Address:</b>
+		<input type="text" id="Address"><br><br>
+		<b>Phone Number:</b>
+		<input type="text" id="PhoneNumber"><br><br>
+		<b>Jobs Done:</b>
+		<select id="Job1">
+			<option>Pick one
+			<option>Cut Grass
+			<option>Spring Clean-Up ($40 an hour)
+			<option>Fall Clean-Up ($55 an hour)
+			<option>Trim Bushes($35 an hour)
+			<option>Snow Plowing
+			<option>Salting
+			<option>Power Washing
+			<option>Cleaning Out Gutters
+			<option>Other
+		</select>
+		<select id="Job2">
+			<option>Pick one	
+			<option>Nothing
+			<option>Cut Grass
+			<option>Spring Clean-Up ($40 an hour)
+			<option>Fall Clean-Up ($55 an hour)
+			<option>Trim Bushes($35 an hour)
+			<option>Snow Plowing
+			<option>Salting
+			<option>Power Washing
+			<option>Cleaning Out Gutters
+			<option>Other
+		</select>
+		<select id="Job3">
+			<option>Pick one
+			<option>Nothing
+			<option>Cut Grass
+			<option>Spring Clean-Up ($40 an hour)
+			<option>Fall Clean-Up ($55 an hour)
+			<option>Trim Bushes($35 an hour)
+			<option>Snow Plowing
+			<option>Salting
+			<option>Power Washing
+			<option>Cleaning Out Gutters
+			<option>Other
+		</select>
+		<br><br><br>
+		<button onclick="information()">Click here to generate bill</button>
+
+
+<div style="display: none;">
+<div id="Bill">
+<img src="logo.png"><br>
+<script> document.write("<h3>HRM<br>3686 Lantern Lane<br>Fort Gratiot MI, 48059<br>1(810)531-8662</h3> <h3>Date: </h3><br><p>Billing<br><br><b>Name: </b>" + Name +"<br><b>Address: </b>" + Address + "<br><b>Phone #: </b>" + PhoneNumber + "<br></p><br>");
+</script>
+<table style="width:100%">
+  <tr>
+    <th>Job</th>
+    <th>Description</th> 
+    <th>Price</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td> 
+    <td></td>
+  </tr>
+</table>
+
+</div>
+</div>
+
+<script>
+var b = document.getElementById("Bill").innerHTML;
+
+</script>
+</body>
+</html>
